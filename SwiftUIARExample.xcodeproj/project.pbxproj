@@ -12,6 +12,10 @@
 		68E42EB0276A39A80064D8DC /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 68E42EAF276A39A80064D8DC /* Experience.rcproject */; };
 		68E42EB2276A39A90064D8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68E42EB1276A39A90064D8DC /* Assets.xcassets */; };
 		68E42EB5276A39A90064D8DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68E42EB4276A39A90064D8DC /* Preview Assets.xcassets */; };
+		68E42EBC276A41A20064D8DC /* Covid19.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 68E42EBB276A41A20064D8DC /* Covid19.usdz */; };
+		68E42EBE276B7FBD0064D8DC /* ARGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E42EBD276B7FBD0064D8DC /* ARGameView.swift */; };
+		68E42EC0276B860D0064D8DC /* ARViewOnTapHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E42EBF276B860D0064D8DC /* ARViewOnTapHandler.swift */; };
+		68E42EC2276B87120064D8DC /* Covid19TapHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E42EC1276B87120064D8DC /* Covid19TapHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		68E42EAF276A39A80064D8DC /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		68E42EB1276A39A90064D8DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68E42EB4276A39A90064D8DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		68E42EBB276A41A20064D8DC /* Covid19.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Covid19.usdz; sourceTree = "<group>"; };
+		68E42EBD276B7FBD0064D8DC /* ARGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGameView.swift; sourceTree = "<group>"; };
+		68E42EBF276B860D0064D8DC /* ARViewOnTapHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewOnTapHandler.swift; sourceTree = "<group>"; };
+		68E42EC1276B87120064D8DC /* Covid19TapHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19TapHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,10 @@
 			children = (
 				68E42EAB276A39A80064D8DC /* AppDelegate.swift */,
 				68E42EAD276A39A80064D8DC /* ContentView.swift */,
+				68E42EBD276B7FBD0064D8DC /* ARGameView.swift */,
+				68E42EBF276B860D0064D8DC /* ARViewOnTapHandler.swift */,
+				68E42EC1276B87120064D8DC /* Covid19TapHandler.swift */,
+				68E42EBB276A41A20064D8DC /* Covid19.usdz */,
 				68E42EAF276A39A80064D8DC /* Experience.rcproject */,
 				68E42EB1276A39A90064D8DC /* Assets.xcassets */,
 				68E42EB3276A39A90064D8DC /* Preview Content */,
@@ -130,6 +142,7 @@
 			files = (
 				68E42EB5276A39A90064D8DC /* Preview Assets.xcassets in Resources */,
 				68E42EB2276A39A90064D8DC /* Assets.xcassets in Resources */,
+				68E42EBC276A41A20064D8DC /* Covid19.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68E42EC2276B87120064D8DC /* Covid19TapHandler.swift in Sources */,
+				68E42EC0276B860D0064D8DC /* ARViewOnTapHandler.swift in Sources */,
 				68E42EAE276A39A80064D8DC /* ContentView.swift in Sources */,
 				68E42EAC276A39A80064D8DC /* AppDelegate.swift in Sources */,
 				68E42EB0276A39A80064D8DC /* Experience.rcproject in Sources */,
+				68E42EBE276B7FBD0064D8DC /* ARGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
