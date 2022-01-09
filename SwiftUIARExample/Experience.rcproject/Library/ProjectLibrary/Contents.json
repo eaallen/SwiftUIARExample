@@ -1,3 +1,22 @@
 [
-
+  {
+    "libraryIdentifier" : "8ac2ed26f18080fe33fd4b27b86f15c8",
+    "format" : "image",
+    "displayName" : "IMG_0376.heic"
+  },
+  {
+    "libraryIdentifier" : "96fccb8ece8eada76b57680ee4c4d782",
+    "format" : "model",
+    "displayName" : "sceb1.reality"
+  },
+  {
+    "libraryIdentifier" : "82a6f7b0dc2ef3d5242c619189802a51",
+    "format" : "model",
+    "displayName" : "Experience2.reality"
+  },
+  {
+    "libraryIdentifier" : "5eefb88f422aef40b47687210a9da7ef",
+    "format" : "model",
+    "displayName" : "button.reality"
+  }
 ]

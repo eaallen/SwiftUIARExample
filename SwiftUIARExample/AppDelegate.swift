@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = UIHostingController(rootView: contentView)
         self.window = window
         window.makeKeyAndVisible()
+        
+        // stop app from going to sleep
+        UIApplication.shared.isIdleTimerDisabled = true
         return true
     }
 

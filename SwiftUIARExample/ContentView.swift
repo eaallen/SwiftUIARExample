@@ -10,49 +10,58 @@ import RealityKit
 import ARKit
 
 struct ContentView : View {
+    @State var text = "nope"
+    
+    let arViews: [ARViewData] = [
+        ARViewData(name: "Example Image Tracking", view: AnyView(ExampleImageView())),
+        ARViewData(name: "Auth Button", view: AnyView(AuthButton())),
+        ARViewData(name: "Covid 19", view: AnyView(Covid19ARContainer())),
+        ARViewData(name: "Place Boxes!", view: AnyView(BoxPlacer())),
+        ARViewData(name: "Swab Box", view: AnyView(ImageAnchorARContainer<Experience.Box>(expiranceScene: Experience.loadBox))),
+        ARViewData(name: "Basic Button", view: AnyView(ImageAnchorARContainer<Experience.Button>(expiranceScene: Experience.loadButton))),
+        ARViewData(
+            name: "Theremometer",
+            view: AnyView(AnyAnchorARContainer<Experience.Theremometer>(expiranceScene: Experience.loadTheremometer))
+        ),
+    ]
+    
+    
     var body: some View {
-        return ARViewContainer().edgesIgnoringSafeArea(.all)
+        // input data
+ 
+        return NavigationView{
+            List(arViews){ ar in
+                NavigationLink(ar.name){
+                    ar.view
+                }
+//                NavigationLink("Auth Button"){
+//                    AuthButton()
+//                }
+//                NavigationLink("Covid 19"){
+//                    Covid19ARContainer()
+//                }
+//                NavigationLink("Place a box with text"){
+//                    ARViewContainer(overlayText: $text)
+//                }
+//                NavigationLink("cool box"){
+//                    ImageAnchorARContainer<Experience.Box>(expiranceScene: Experience.loadBox)
+//                }
+//                NavigationLink("Button"){
+//                    ImageAnchorARContainer<Experience.Button>(expiranceScene: Experience.loadButton)
+//                }
+            }.navigationTitle("Home")
+
+        }
     }
 }
 
-struct ARViewContainer: UIViewRepresentable {
-    
-    func makeUIView(context: Context) -> ARGameView {
-        let arView = ARGameView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
-        
-        arView.enableTapGesture(handler: Covid19TapHandler())
-       
-        let config = ARWorldTrackingConfiguration()
-        config.planeDetection = [.horizontal, .vertical]
-        config.environmentTexturing = .automatic
-        
-        // not all versions of ios support this feature
-        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
-            config.sceneReconstruction = .mesh
-        }
-        
-        arView.session.run(config)
 
-        return arView
-    }
-    
-    func updateUIView(_ arView: ARGameView, context: Context) {
-        print("update the UIView!")
-        if let modelEntity = try? ModelEntity.loadModel(named: "Covid19"){
-            var layout = SIMD3<Float>()
-            layout.x = 0
-            layout.y = 0.5
-            layout.z = -3
-            let anchorEntity = AnchorEntity(world: layout)
-            modelEntity.generateCollisionShapes(recursive: true)
-            anchorEntity.addChild(modelEntity)
-            arView.scene.anchors.append(anchorEntity)
-        } else {
-            print ("Unable to get Covid19 usdz model")
-        }
-    }
-    
+struct ARViewData: Identifiable {
+    let name : String
+    let view : AnyView
+    let id = UUID()
 }
+
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {

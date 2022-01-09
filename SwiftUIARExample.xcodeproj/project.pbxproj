@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4578690227891CAC009ECB86 /* button.reality in Resources */ = {isa = PBXBuildFile; fileRef = 4578690127891CAC009ECB86 /* button.reality */; };
+		45786904278926E5009ECB86 /* ARView+Coaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45786903278926E5009ECB86 /* ARView+Coaching.swift */; };
+		4578690627894C30009ECB86 /* ExampleImageAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578690527894C30009ECB86 /* ExampleImageAnchor.swift */; };
+		45786909278A0C24009ECB86 /* ImageAnchorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45786908278A0C24009ECB86 /* ImageAnchorCoordinator.swift */; };
+		4578690B278A1097009ECB86 /* ARButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578690A278A1097009ECB86 /* ARButton.swift */; };
+		4578690E278A1D36009ECB86 /* ImageAnchorARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578690D278A1D36009ECB86 /* ImageAnchorARContainer.swift */; };
+		45786910278A3743009ECB86 /* AnyAnchorARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578690F278A3743009ECB86 /* AnyAnchorARContainer.swift */; };
+		45CEA4142786AC6200D4F014 /* Covid19ARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA4132786AC6200D4F014 /* Covid19ARContainer.swift */; };
+		45CEA4172787C24500D4F014 /* SwabBoxARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA4162787C24500D4F014 /* SwabBoxARContainer.swift */; };
+		45CEA4512787DE7100D4F014 /* UseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA4502787DE7100D4F014 /* UseDelegate.swift */; };
+		45CEA4532788F5AB00D4F014 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA4522788F5AB00D4F014 /* AuthButton.swift */; };
 		68E42EAC276A39A80064D8DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E42EAB276A39A80064D8DC /* AppDelegate.swift */; };
 		68E42EAE276A39A80064D8DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E42EAD276A39A80064D8DC /* ContentView.swift */; };
 		68E42EB0276A39A80064D8DC /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 68E42EAF276A39A80064D8DC /* Experience.rcproject */; };
@@ -19,7 +30,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		68E42EA8276A39A80064D8DC /* SwiftUIARExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIARExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4578690127891CAC009ECB86 /* button.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = button.reality; path = ../../../Downloads/button.reality; sourceTree = "<group>"; };
+		45786903278926E5009ECB86 /* ARView+Coaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+Coaching.swift"; sourceTree = "<group>"; };
+		4578690527894C30009ECB86 /* ExampleImageAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleImageAnchor.swift; sourceTree = "<group>"; };
+		45786908278A0C24009ECB86 /* ImageAnchorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnchorCoordinator.swift; sourceTree = "<group>"; };
+		4578690A278A1097009ECB86 /* ARButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARButton.swift; sourceTree = "<group>"; };
+		4578690D278A1D36009ECB86 /* ImageAnchorARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnchorARContainer.swift; sourceTree = "<group>"; };
+		4578690F278A3743009ECB86 /* AnyAnchorARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAnchorARContainer.swift; sourceTree = "<group>"; };
+		45CEA4132786AC6200D4F014 /* Covid19ARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19ARContainer.swift; sourceTree = "<group>"; };
+		45CEA4162787C24500D4F014 /* SwabBoxARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwabBoxARContainer.swift; sourceTree = "<group>"; };
+		45CEA4502787DE7100D4F014 /* UseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseDelegate.swift; sourceTree = "<group>"; };
+		45CEA4522788F5AB00D4F014 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		68E42EA8276A39A80064D8DC /* AR Explore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Explore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E42EAB276A39A80064D8DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68E42EAD276A39A80064D8DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		68E42EAF276A39A80064D8DC /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
@@ -42,6 +64,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45786907278A0BFB009ECB86 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				45786908278A0C24009ECB86 /* ImageAnchorCoordinator.swift */,
+			);
+			name = Coordinators;
+			sourceTree = "<group>";
+		};
+		4578690C278A1D10009ECB86 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				4578690D278A1D36009ECB86 /* ImageAnchorARContainer.swift */,
+				4578690F278A3743009ECB86 /* AnyAnchorARContainer.swift */,
+			);
+			name = Generic;
+			sourceTree = "<group>";
+		};
+		45CEA4122786AC0400D4F014 /* ARContainers */ = {
+			isa = PBXGroup;
+			children = (
+				4578690C278A1D10009ECB86 /* Generic */,
+				45CEA4132786AC6200D4F014 /* Covid19ARContainer.swift */,
+				45CEA4162787C24500D4F014 /* SwabBoxARContainer.swift */,
+				45CEA4502787DE7100D4F014 /* UseDelegate.swift */,
+				45CEA4522788F5AB00D4F014 /* AuthButton.swift */,
+				4578690527894C30009ECB86 /* ExampleImageAnchor.swift */,
+				4578690A278A1097009ECB86 /* ARButton.swift */,
+			);
+			name = ARContainers;
+			sourceTree = "<group>";
+		};
+		45CEA4152786ACFC00D4F014 /* TapHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				68E42EBF276B860D0064D8DC /* ARViewOnTapHandler.swift */,
+				68E42EC1276B87120064D8DC /* Covid19TapHandler.swift */,
+			);
+			name = TapHandlers;
+			sourceTree = "<group>";
+		};
 		68E42E9F276A39A80064D8DC = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +115,7 @@
 		68E42EA9276A39A80064D8DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				68E42EA8276A39A80064D8DC /* SwiftUIARExample.app */,
+				68E42EA8276A39A80064D8DC /* AR Explore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,11 +123,14 @@
 		68E42EAA276A39A80064D8DC /* SwiftUIARExample */ = {
 			isa = PBXGroup;
 			children = (
+				45786907278A0BFB009ECB86 /* Coordinators */,
+				45CEA4152786ACFC00D4F014 /* TapHandlers */,
+				45CEA4122786AC0400D4F014 /* ARContainers */,
 				68E42EAB276A39A80064D8DC /* AppDelegate.swift */,
 				68E42EAD276A39A80064D8DC /* ContentView.swift */,
 				68E42EBD276B7FBD0064D8DC /* ARGameView.swift */,
-				68E42EBF276B860D0064D8DC /* ARViewOnTapHandler.swift */,
-				68E42EC1276B87120064D8DC /* Covid19TapHandler.swift */,
+				45786903278926E5009ECB86 /* ARView+Coaching.swift */,
+				4578690127891CAC009ECB86 /* button.reality */,
 				68E42EBB276A41A20064D8DC /* Covid19.usdz */,
 				68E42EAF276A39A80064D8DC /* Experience.rcproject */,
 				68E42EB1276A39A90064D8DC /* Assets.xcassets */,
@@ -99,7 +164,7 @@
 			);
 			name = SwiftUIARExample;
 			productName = SwiftUIARExample;
-			productReference = 68E42EA8276A39A80064D8DC /* SwiftUIARExample.app */;
+			productReference = 68E42EA8276A39A80064D8DC /* AR Explore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -142,6 +207,7 @@
 			files = (
 				68E42EB5276A39A90064D8DC /* Preview Assets.xcassets in Resources */,
 				68E42EB2276A39A90064D8DC /* Assets.xcassets in Resources */,
+				4578690227891CAC009ECB86 /* button.reality in Resources */,
 				68E42EBC276A41A20064D8DC /* Covid19.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,12 +219,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4578690B278A1097009ECB86 /* ARButton.swift in Sources */,
+				45CEA4512787DE7100D4F014 /* UseDelegate.swift in Sources */,
+				45786909278A0C24009ECB86 /* ImageAnchorCoordinator.swift in Sources */,
+				45CEA4532788F5AB00D4F014 /* AuthButton.swift in Sources */,
 				68E42EC2276B87120064D8DC /* Covid19TapHandler.swift in Sources */,
 				68E42EC0276B860D0064D8DC /* ARViewOnTapHandler.swift in Sources */,
+				45786904278926E5009ECB86 /* ARView+Coaching.swift in Sources */,
 				68E42EAE276A39A80064D8DC /* ContentView.swift in Sources */,
 				68E42EAC276A39A80064D8DC /* AppDelegate.swift in Sources */,
+				45CEA4142786AC6200D4F014 /* Covid19ARContainer.swift in Sources */,
 				68E42EB0276A39A80064D8DC /* Experience.rcproject in Sources */,
+				4578690627894C30009ECB86 /* ExampleImageAnchor.swift in Sources */,
+				4578690E278A1D36009ECB86 /* ImageAnchorARContainer.swift in Sources */,
 				68E42EBE276B7FBD0064D8DC /* ARGameView.swift in Sources */,
+				45786910278A3743009ECB86 /* AnyAnchorARContainer.swift in Sources */,
+				45CEA4172787C24500D4F014 /* SwabBoxARContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,8 +380,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eaallen.SwiftUIARExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eaallen.ARExplore;
+				PRODUCT_NAME = "AR Explore";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -335,8 +411,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eaallen.SwiftUIARExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eaallen.ARExplore;
+				PRODUCT_NAME = "AR Explore";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
