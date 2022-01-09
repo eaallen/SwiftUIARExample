@@ -27,6 +27,8 @@ struct SwabBoxARContainer: UIViewRepresentable {
         // Load the "Box" scene from the "Experience" Reality File
         let arView = ARView(frame: .zero)
         if let boxAnchor = try? Experience.loadBox(){
+
+
             // Add the box anchor to the scene
             arView.scene.addAnchor(boxAnchor)
 

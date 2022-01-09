@@ -9,19 +9,18 @@ import Foundation
 import RealityKit
 import ARKit
 
-// taken from https://www.iosdevie.com/p/introduction-to-realitykit-on-ios
+// code from https://www.iosdevie.com/p/introduction-to-realitykit-on-ios
 extension ARView: ARCoachingOverlayViewDelegate {
-    func addCoaching() {
+    func addCoaching(goal: ARCoachingOverlayView.Goal) {
         let coachingOverlay = ARCoachingOverlayView()
         coachingOverlay.delegate = self
         coachingOverlay.session = self.session
         coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        coachingOverlay.goal = .anyPlane
+        coachingOverlay.goal = goal
         self.addSubview(coachingOverlay)
     }
     
-    public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
-        //Ready to add entities next?
-    }
+    /// The delegate’s coachingOverlayViewDidDeactivate function gets triggered once the goal is met.
+    public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView){}
 }

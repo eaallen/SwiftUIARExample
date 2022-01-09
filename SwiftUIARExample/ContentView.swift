@@ -13,7 +13,6 @@ struct ContentView : View {
     @State var text = "nope"
     
     let arViews: [ARViewData] = [
-        ARViewData(name: "Example Image Tracking", view: AnyView(ExampleImageView())),
         ARViewData(name: "Auth Button", view: AnyView(AuthButton())),
         ARViewData(name: "Covid 19", view: AnyView(Covid19ARContainer())),
         ARViewData(name: "Place Boxes!", view: AnyView(BoxPlacer())),
@@ -21,34 +20,17 @@ struct ContentView : View {
         ARViewData(name: "Basic Button", view: AnyView(ImageAnchorARContainer<Experience.Button>(expiranceScene: Experience.loadButton))),
         ARViewData(
             name: "Theremometer",
-            view: AnyView(AnyAnchorARContainer<Experience.Theremometer>(expiranceScene: Experience.loadTheremometer))
+            view: AnyView(AnyAnchorARContainer<Experience.Theremometer>(expiranceScene: Experience.loadTheremometer, coachingGoal: .horizontalPlane))
         ),
     ]
     
     
     var body: some View {
-        // input data
- 
-        return NavigationView{
+        NavigationView{
             List(arViews){ ar in
                 NavigationLink(ar.name){
-                    ar.view
+                    ar.view.ignoresSafeArea()
                 }
-//                NavigationLink("Auth Button"){
-//                    AuthButton()
-//                }
-//                NavigationLink("Covid 19"){
-//                    Covid19ARContainer()
-//                }
-//                NavigationLink("Place a box with text"){
-//                    ARViewContainer(overlayText: $text)
-//                }
-//                NavigationLink("cool box"){
-//                    ImageAnchorARContainer<Experience.Box>(expiranceScene: Experience.loadBox)
-//                }
-//                NavigationLink("Button"){
-//                    ImageAnchorARContainer<Experience.Button>(expiranceScene: Experience.loadButton)
-//                }
             }.navigationTitle("Home")
 
         }

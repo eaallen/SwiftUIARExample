@@ -30,7 +30,7 @@ struct ImageAnchorARContainer<ExpiranceScene: HasAnchoring> : UIViewRepresentabl
             // Add delegate
             context.coordinator.setARView(arView)
             
-            arView.session.delegate = context.coordinator // an instance of SwabBoxCoordinator
+            arView.session.delegate = context.coordinator // an instance of ImageAnchorCoordinator
         }
         
         return arView
