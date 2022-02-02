@@ -22,7 +22,8 @@ struct ContentView : View {
             name: "Theremometer",
             view: AnyView(AnyAnchorARContainer<Experience.Theremometer>(expiranceScene: Experience.loadTheremometer, coachingGoal: .horizontalPlane))
         ),
-        ARViewData(name: "Shooter", view: AnyView(ShooterARContainer()))
+        ARViewData(name: "Shooter", view: AnyView(ShooterARContainer())),
+        ARViewData(name: "camera stuck", view: AnyView(CameraARContainer())),
     ]
     
     

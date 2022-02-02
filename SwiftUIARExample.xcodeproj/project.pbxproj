@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		452C609D27AA674000E62F79 /* ShooterARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452C609C27AA674000E62F79 /* ShooterARContainer.swift */; };
 		452C609F27AA68FE00E62F79 /* ShooterTapHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452C609E27AA68FE00E62F79 /* ShooterTapHandler.swift */; };
+		452C60A127AADD6500E62F79 /* cameraARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452C60A027AADD6500E62F79 /* cameraARContainer.swift */; };
+		452C60A327AAE13D00E62F79 /* cameraShoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452C60A227AAE13D00E62F79 /* cameraShoot.swift */; };
 		4578690227891CAC009ECB86 /* button.reality in Resources */ = {isa = PBXBuildFile; fileRef = 4578690127891CAC009ECB86 /* button.reality */; };
 		45786904278926E5009ECB86 /* ARView+Coaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45786903278926E5009ECB86 /* ARView+Coaching.swift */; };
 		4578690627894C30009ECB86 /* ExampleImageAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578690527894C30009ECB86 /* ExampleImageAnchor.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		452C609C27AA674000E62F79 /* ShooterARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShooterARContainer.swift; sourceTree = "<group>"; };
 		452C609E27AA68FE00E62F79 /* ShooterTapHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShooterTapHandler.swift; sourceTree = "<group>"; };
+		452C60A027AADD6500E62F79 /* cameraARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraARContainer.swift; sourceTree = "<group>"; };
+		452C60A227AAE13D00E62F79 /* cameraShoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraShoot.swift; sourceTree = "<group>"; };
 		4578690127891CAC009ECB86 /* button.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = button.reality; path = ../../../Downloads/button.reality; sourceTree = "<group>"; };
 		45786903278926E5009ECB86 /* ARView+Coaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+Coaching.swift"; sourceTree = "<group>"; };
 		4578690527894C30009ECB86 /* ExampleImageAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleImageAnchor.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				4578690527894C30009ECB86 /* ExampleImageAnchor.swift */,
 				4578690A278A1097009ECB86 /* ARButton.swift */,
 				452C609C27AA674000E62F79 /* ShooterARContainer.swift */,
+				452C60A027AADD6500E62F79 /* cameraARContainer.swift */,
 			);
 			name = ARContainers;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 				68E42EBF276B860D0064D8DC /* ARViewOnTapHandler.swift */,
 				68E42EC1276B87120064D8DC /* Covid19TapHandler.swift */,
 				452C609E27AA68FE00E62F79 /* ShooterTapHandler.swift */,
+				452C60A227AAE13D00E62F79 /* cameraShoot.swift */,
 			);
 			name = TapHandlers;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4578690B278A1097009ECB86 /* ARButton.swift in Sources */,
+				452C60A127AADD6500E62F79 /* cameraARContainer.swift in Sources */,
 				45CEA4512787DE7100D4F014 /* UseDelegate.swift in Sources */,
 				45786909278A0C24009ECB86 /* ImageAnchorCoordinator.swift in Sources */,
 				452C609D27AA674000E62F79 /* ShooterARContainer.swift in Sources */,
@@ -234,6 +241,7 @@
 				68E42EC0276B860D0064D8DC /* ARViewOnTapHandler.swift in Sources */,
 				452C609F27AA68FE00E62F79 /* ShooterTapHandler.swift in Sources */,
 				45786904278926E5009ECB86 /* ARView+Coaching.swift in Sources */,
+				452C60A327AAE13D00E62F79 /* cameraShoot.swift in Sources */,
 				68E42EAE276A39A80064D8DC /* ContentView.swift in Sources */,
 				68E42EAC276A39A80064D8DC /* AppDelegate.swift in Sources */,
 				45CEA4142786AC6200D4F014 /* Covid19ARContainer.swift in Sources */,
