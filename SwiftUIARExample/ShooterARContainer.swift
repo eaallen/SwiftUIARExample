@@ -12,16 +12,16 @@ import ARKit
 import Combine
 
 struct Shooter: View {
-    @State var eventHandler = EventHanlder()
+    var eventHandler = EventHanlder()
     var body: some View{
         ZStack{
-            ShooterARContainer(eventHanlder: $eventHandler)
+            ShooterARContainer(eventHanlder: eventHandler)
             VStack{
                 Spacer()
                 ZStack{
                     RoundedRectangle(cornerRadius: 3).frame(width: 80, height: 80)
                     Text("FIRE").foregroundColor(.white).font(.largeTitle)
-                   
+                    
                 }.onTapGesture {
                     eventHandler.run()
                 }
@@ -45,13 +45,11 @@ class EventHanlder {
     func setRun(_ callback: @escaping ()->Void){
         run = callback
     }
-    
-    
 }
 
 
 struct ShooterARContainer: UIViewRepresentable {
-    @Binding var eventHanlder: EventHanlder
+    var eventHanlder: EventHanlder
     var pointCollisionSubscription: Cancellable?
     func makeCoordinator() -> ShooterARCoordinator<Self>{
         ShooterARCoordinator<Self>(self)
@@ -62,26 +60,31 @@ struct ShooterARContainer: UIViewRepresentable {
         // ar view only get intilized in the makeUIView!
         let arView = ARGameView(frame: .zero)
         
+        // enable tap gesture
         arView.enableTapGesture(handler: ShooterTapHandler())
         
+        // give the ARView to the coordinator
         context.coordinator.setARView(arView)
-        arView.session.delegate = context.coordinator
-
-        // from https://stackoverflow.com/a/58401369/15034002
+        
+        // allow the UI to call the coordinator shoot method
+        eventHanlder.setRun(context.coordinator.shoot)
+        
+        
+        // create the AR model that the bullets will go to
+        // box taken from https://stackoverflow.com/a/58401369/15034002
         let box = ModelEntity(
             mesh: MeshResource.generateBox(size: 0.05),
             materials: [SimpleMaterial(color: .clear, isMetallic: true)]
         )
-        box.name = "box"
-        box.generateCollisionShapes(recursive: true)
-    
+        box.name = "box" // we give it a name so it will be easy to find later
+        
+        // set the box relative to the camera
         let cameraAnchor = AnchorEntity(.camera)
         cameraAnchor.addChild(box)
         arView.scene.addAnchor(cameraAnchor)
         
-        eventHanlder.setRun(context.coordinator.shoot)
         
-        // Move the box in front of the camera slightly
+        // Move the box in front of the camera by 3 meters
         box.transform.translation = [0, 0, -3]
         
         return arView
@@ -95,7 +98,7 @@ struct ShooterARContainer: UIViewRepresentable {
             layout.y = 0.5
             layout.z = -3
             let anchorEntity = AnchorEntity(world: layout)
-            modelEntity.generateCollisionShapes(recursive: true)
+            modelEntity.generateCollisionShapes(recursive: true) // this will let us shoot the object
             modelEntity.name = "COVID19"
             anchorEntity.addChild(modelEntity)
             arView.scene.anchors.append(anchorEntity)
@@ -119,116 +122,79 @@ class ShooterARCoordinator<ARContainer: UIViewRepresentable>: NSObject, ARSessio
     }
     
     func setARView(_ arView: ARGameView){
-        self.arGameView = arView
-        
+        arGameView = arView // get access the arView
+        arGameView?.session.delegate = self // give the coordinator access to the AR session (see session methods)
     }
     
     
     func shoot(){
+        // if the target box is avaliable
         if let target = arGameView?.scene.findEntity(named: "box"){
-            let box = //BoxEntity(size: 0.05, color: .white, roughness: 1.0)
-            ModelEntity(
+            let bullet = ModelEntity(
                 mesh: MeshResource.generateSphere(radius: 0.05),
                 materials: [SimpleMaterial(color: .white, isMetallic: false)]
             )
-            box.generateCollisionShapes(recursive: true)
-//            boxCollisionSubscription = box.collision.publisher.sink{ collisionComponent in
-//                print(collisionComponent.filter.group.rawValue)
-//            }
+            bullet.generateCollisionShapes(recursive: true) // will allow colission between the bullet and the covid
             
-            sub = arGameView?.scene.publisher(for: CollisionEvents.Began.self, on:box ).sink{ v in
-                // if the first thing you hit was Covid-19
-                if v.entityB.name == "COVID19" {
-                    let ent = v.entityB
-                    print("---->",ent.name)
-                    // roll it!
-                    let rollTransform = Transform(pitch: 0, yaw: 0, roll: 5)
-                    ent.move(to: rollTransform, relativeTo: ent, duration: Async.Constants.rollDuration)
+            // call the following method when the bullet has a collision
+            sub = arGameView?.scene.publisher(for: CollisionEvents.Began.self, on: bullet).sink(receiveValue: collisionHanlder)
+            
+            // anchor the bullet to the camera
+            let camera = AnchorEntity(.camera)
+            camera.addChild(bullet)
+            arGameView?.scene.addAnchor(camera)
+            
+            // offset it down a few centimeters
+            bullet.position.y = -0.125
+            
+            // fire! (move the bullet to the target named "box")
+            bullet.move(to: target.transform, relativeTo: target, duration: 0.4)
+            
+            Async.wait(0.4){
+                bullet.removeFromParent()
+            }
+        }
+    }
+    
+    func collisionHanlder(collisionData: CollisionEvents.Began){
+        // entityA is the bullet, entityB is the first thing it hit.
+        
+        // if the first thing it hit was Covid-19
+        if collisionData.entityB.name == "COVID19" {
+            let ent = collisionData.entityB
+            
+            // roll it!
+            let rollTransform = Transform(pitch: 0, yaw: 0, roll: 5)
+            ent.move(to: rollTransform, relativeTo: ent, duration: Async.Constants.rollDuration)
+            
+            Async.wait(Async.Constants.rollDuration){
+                // roll it backwords
+                let rollTransform = Transform(pitch: 0, yaw: 0, roll: -5)
+                ent.move(to: rollTransform, relativeTo: ent, duration: Async.Constants.rollDuration)
+                
+                Async.wait(Async.Constants.rollDuration){
+                    // shrink it!
+                    var transform = Transform()
+                    transform.scale = SIMD3(0.1,0.1,0.1)
+                    transform.translation = ent.position
                     
-                    Async.wait(Async.Constants.rollDuration){
-                        // roll it backwords
-                        let rollTransform = Transform(pitch: 0, yaw: 0, roll: -5)
-                        ent.move(to: rollTransform, relativeTo: ent, duration: Async.Constants.rollDuration)
+                    ent.move(to: transform, relativeTo: ent, duration: Async.Constants.shrinkDuration)
+                    
+                    Async.wait(Async.Constants.shrinkDuration - 0.1){
+                        ent.removeFromParent()
                         
-                        Async.wait(Async.Constants.rollDuration){
-                            // shrink it!
-                            var transform = Transform()
-                            transform.scale = SIMD3(0.1,0.1,0.1)
-                            transform.translation = ent.position
-
-                            ent.move(to: transform, relativeTo: ent, duration: Async.Constants.shrinkDuration)
-                            
-                            Async.wait(Async.Constants.shrinkDuration - 0.1){
-                                ent.removeFromParent()
-                                
-                                // place a new covid 19
-                                
-                            }
-                        }
+                        // place a new covid 19
+                        
                     }
                 }
             }
-            
-            let camera = AnchorEntity(.camera)
-            camera.addChild(box)
-            arGameView?.scene.addAnchor(camera)
-            
-            box.position.y = -0.125
-            
-            box.move(to: target.transform, relativeTo: target, duration: 0.4)
-            
-            Async.wait(0.4){
-                box.removeFromParent()
-            }
-            
-        
         }
-        
-        
     }
     
-    
-    
-    
-    //    func session(_ session: ARSession, didUpdate anchors : [ARAnchor]) {
-    ////        print("in session did update")
-    //        if let arView = arGameView {
-    //            guard let transform = arView.session.currentFrame?.camera.transform
-    //            else { return }
-    ////            print("???? ????")
-    //
-    //            let arkitAnchor = ARAnchor(transform: transform)
-    //
-    //            let anchor = AnchorEntity(anchor: arkitAnchor)
-    //            anchor.addChild(box)
-    //            arView.scene.addAnchor(anchor)
-    //        }
-    //    }
-    func session(_ session: ARSession, didUpdate frame: ARFrame) {
-//        if let arView = arGameView {
-            //            guard let transform = arView.session.currentFrame?.camera.transform
-            //            else { return }
-            //            print("???? ????", frame.camera.transform == transform)
-            //
-            ////            let arkitAnchor = ARAnchor(transform: transform)
-            //
-            //            let anchor = AnchorEntity(world: [0,0,-20])
-            //
-            //            print(transform.columns)
-            //
-            //            anchor.addChild(box)
-            ////            box.position.z = Float(count)
-            //            arView.scene.addAnchor(anchor)
-//        }
-    }
-    
-    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-//        print("ADDED an ANCHOR")
-    }
-    
-    func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {
-//        print("removed it!!!", anchors.first)
-    }
+    func session(_ session: ARSession, didUpdate anchors : [ARAnchor]) {}
+    func session(_ session: ARSession, didUpdate frame: ARFrame) {}
+    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {}
+    func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {}
 }
 
 struct Async {
