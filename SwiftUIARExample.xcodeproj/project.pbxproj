@@ -13,6 +13,8 @@
 		452C609F27AA68FE00E62F79 /* ShooterTapHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452C609E27AA68FE00E62F79 /* ShooterTapHandler.swift */; };
 		452C60A127AADD6500E62F79 /* cameraARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452C60A027AADD6500E62F79 /* cameraARContainer.swift */; };
 		452C60A327AAE13D00E62F79 /* cameraShoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452C60A227AAE13D00E62F79 /* cameraShoot.swift */; };
+		45629E8127B165B500E86DF2 /* bean-dna.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 45629E8027B165B500E86DF2 /* bean-dna.usdz */; };
+		45629E8327B1664500E86DF2 /* USDZProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45629E8227B1664500E86DF2 /* USDZProperties.swift */; };
 		4578690227891CAC009ECB86 /* button.reality in Resources */ = {isa = PBXBuildFile; fileRef = 4578690127891CAC009ECB86 /* button.reality */; };
 		45786904278926E5009ECB86 /* ARView+Coaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45786903278926E5009ECB86 /* ARView+Coaching.swift */; };
 		4578690627894C30009ECB86 /* ExampleImageAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578690527894C30009ECB86 /* ExampleImageAnchor.swift */; };
@@ -20,6 +22,8 @@
 		4578690B278A1097009ECB86 /* ARButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578690A278A1097009ECB86 /* ARButton.swift */; };
 		4578690E278A1D36009ECB86 /* ImageAnchorARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578690D278A1D36009ECB86 /* ImageAnchorARContainer.swift */; };
 		45786910278A3743009ECB86 /* AnyAnchorARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578690F278A3743009ECB86 /* AnyAnchorARContainer.swift */; };
+		45CD6D5C27B1AEAA00417F9E /* DNAStand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD6D5B27B1AEAA00417F9E /* DNAStand.swift */; };
+		45CD6D5E27B1F4EA00417F9E /* delta-variant.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 45CD6D5D27B1F4EA00417F9E /* delta-variant.usdz */; };
 		45CEA4142786AC6200D4F014 /* Covid19ARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA4132786AC6200D4F014 /* Covid19ARContainer.swift */; };
 		45CEA4172787C24500D4F014 /* SwabBoxARContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA4162787C24500D4F014 /* SwabBoxARContainer.swift */; };
 		45CEA4512787DE7100D4F014 /* UseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA4502787DE7100D4F014 /* UseDelegate.swift */; };
@@ -42,6 +46,8 @@
 		452C609E27AA68FE00E62F79 /* ShooterTapHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShooterTapHandler.swift; sourceTree = "<group>"; };
 		452C60A027AADD6500E62F79 /* cameraARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraARContainer.swift; sourceTree = "<group>"; };
 		452C60A227AAE13D00E62F79 /* cameraShoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraShoot.swift; sourceTree = "<group>"; };
+		45629E8027B165B500E86DF2 /* bean-dna.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "bean-dna.usdz"; sourceTree = "<group>"; };
+		45629E8227B1664500E86DF2 /* USDZProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USDZProperties.swift; sourceTree = "<group>"; };
 		4578690127891CAC009ECB86 /* button.reality */ = {isa = PBXFileReference; lastKnownFileType = file; name = button.reality; path = ../../../Downloads/button.reality; sourceTree = "<group>"; };
 		45786903278926E5009ECB86 /* ARView+Coaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+Coaching.swift"; sourceTree = "<group>"; };
 		4578690527894C30009ECB86 /* ExampleImageAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleImageAnchor.swift; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 		4578690A278A1097009ECB86 /* ARButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARButton.swift; sourceTree = "<group>"; };
 		4578690D278A1D36009ECB86 /* ImageAnchorARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnchorARContainer.swift; sourceTree = "<group>"; };
 		4578690F278A3743009ECB86 /* AnyAnchorARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAnchorARContainer.swift; sourceTree = "<group>"; };
+		45CD6D5B27B1AEAA00417F9E /* DNAStand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNAStand.swift; sourceTree = "<group>"; };
+		45CD6D5D27B1F4EA00417F9E /* delta-variant.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "delta-variant.usdz"; sourceTree = "<group>"; };
 		45CEA4132786AC6200D4F014 /* Covid19ARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19ARContainer.swift; sourceTree = "<group>"; };
 		45CEA4162787C24500D4F014 /* SwabBoxARContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwabBoxARContainer.swift; sourceTree = "<group>"; };
 		45CEA4502787DE7100D4F014 /* UseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				4527525827ADD7F400254ED2 /* CustomEntity.swift */,
+				45CD6D5B27B1AEAA00417F9E /* DNAStand.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -121,6 +130,7 @@
 				4578690A278A1097009ECB86 /* ARButton.swift */,
 				452C609C27AA674000E62F79 /* ShooterARContainer.swift */,
 				452C60A027AADD6500E62F79 /* cameraARContainer.swift */,
+				45629E8227B1664500E86DF2 /* USDZProperties.swift */,
 			);
 			name = ARContainers;
 			sourceTree = "<group>";
@@ -165,6 +175,8 @@
 				68E42EBD276B7FBD0064D8DC /* ARGameView.swift */,
 				45786903278926E5009ECB86 /* ARView+Coaching.swift */,
 				4578690127891CAC009ECB86 /* button.reality */,
+				45629E8027B165B500E86DF2 /* bean-dna.usdz */,
+				45CD6D5D27B1F4EA00417F9E /* delta-variant.usdz */,
 				68E42EBB276A41A20064D8DC /* Covid19.usdz */,
 				68E42EAF276A39A80064D8DC /* Experience.rcproject */,
 				68E42EB1276A39A90064D8DC /* Assets.xcassets */,
@@ -243,6 +255,8 @@
 				68E42EB2276A39A90064D8DC /* Assets.xcassets in Resources */,
 				4578690227891CAC009ECB86 /* button.reality in Resources */,
 				68E42EBC276A41A20064D8DC /* Covid19.usdz in Resources */,
+				45CD6D5E27B1F4EA00417F9E /* delta-variant.usdz in Resources */,
+				45629E8127B165B500E86DF2 /* bean-dna.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45629E8327B1664500E86DF2 /* USDZProperties.swift in Sources */,
 				4578690B278A1097009ECB86 /* ARButton.swift in Sources */,
 				452C60A127AADD6500E62F79 /* cameraARContainer.swift in Sources */,
 				45CEA4512787DE7100D4F014 /* UseDelegate.swift in Sources */,
@@ -266,6 +281,7 @@
 				4527525927ADD7F400254ED2 /* CustomEntity.swift in Sources */,
 				452C60A327AAE13D00E62F79 /* cameraShoot.swift in Sources */,
 				68E42EAE276A39A80064D8DC /* ContentView.swift in Sources */,
+				45CD6D5C27B1AEAA00417F9E /* DNAStand.swift in Sources */,
 				68E42EAC276A39A80064D8DC /* AppDelegate.swift in Sources */,
 				45CEA4142786AC6200D4F014 /* Covid19ARContainer.swift in Sources */,
 				68E42EB0276A39A80064D8DC /* Experience.rcproject in Sources */,
